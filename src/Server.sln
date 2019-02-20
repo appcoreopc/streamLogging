@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server", "Server.csproj", "{4CA941F2-F702-4460-AE35-CA711A7B32F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server", "Server\Server.csproj", "{4CA941F2-F702-4460-AE35-CA711A7B32F0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientApp", "..\ClientApp\ClientApp.csproj", "{6AC26CB8-2811-46C0-85CA-B289CD0665F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientApp", "ClientApp\ClientApp.csproj", "{6AC26CB8-2811-46C0-85CA-B289CD0665F9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamLogging", "..\StreamLogging\StreamLogging.csproj", "{64605BD6-2EE2-4D81-B3E6-489C75E856FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamLogging", "StreamLogging\StreamLogging.csproj", "{64605BD6-2EE2-4D81-B3E6-489C75E856FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
