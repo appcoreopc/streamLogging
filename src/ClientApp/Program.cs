@@ -17,8 +17,10 @@ namespace ClientApp
             CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
             CancellationToken token = cancellationTokenSource.Token;  
 
-            client.Log(new CallOptions(null, null, token));
+            var streamCall = client.Log(new CallOptions(null, null, token));
+            var x = streamCall.GetAwaiter().GetResult().Content;
             
+            Console.WriteLine(x);
             Console.WriteLine("Hello World!");
         }
     }

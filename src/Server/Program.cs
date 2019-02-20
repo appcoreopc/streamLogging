@@ -11,6 +11,7 @@ namespace Server
         
         public override global::System.Threading.Tasks.Task<global::Appcoreopc.Streamlogging.LogReply> Log(IAsyncStreamReader<LogRequest> requestStream, ServerCallContext context)
         {
+             System.Console.WriteLine("Incoming rest request");
              return Task.FromResult(new LogReply { Content = "Hello" });
         }
     }
@@ -25,7 +26,7 @@ namespace Server
             var server = new Grpc.Core.Server
             {
                 Services = { StreamLogging.BindService(new LogService()) },
-                Ports = { new ServerPort("localhost", Port, ServerCredentials.Insecure) }
+                Ports = { new ServerPort("127.0.0.1", Port, ServerCredentials.Insecure) }
             };
 
             server.Start();

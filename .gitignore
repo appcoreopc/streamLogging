@@ -8,3 +8,5 @@ src/Server/obj/
 
 src/StreamLogging/bin/*
 src/Proto/StreamLog\.cs
+
+src/ClientApp/bin/*
