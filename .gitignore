@@ -1,0 +1,10 @@
+
+src/ClientApp/obj/**
+
+src/Server/bin/**
+src/StreamLogging/obj/
+
+src/Server/obj/
+
+src/StreamLogging/bin/*
+src/Proto/StreamLog\.cs
