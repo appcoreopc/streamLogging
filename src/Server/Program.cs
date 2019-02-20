@@ -4,17 +4,22 @@ using Grpc.Core;
 using Appcoreopc.Streamlogging;
 using Grpc;
 
+
 namespace Server
 {
     class LogService : StreamLogging.StreamLoggingBase
     {
         // Server side handler of the SayHello RPC
-        public override Task<LogReply> LogRequest(LogRequest request, ServerCallContext context)
-        {
-            return Task.FromResult(new LogReply { Content = "Hello " + request.Name });
-        }      
-    }
+        // public override Task<LogReply> LogRequest(LogRequest request, ServerCallContext context)
+        // {
+        //     return Task.FromResult(new LogReply { Content = "Hello " + request.Id });
+        // }      
 
+        public override global::System.Threading.Tasks.Task<global::Appcoreopc.Streamlogging.LogReply> Log(IAsyncStreamReader<LogRequest> requestStream, ServerCallContext context)
+        {
+             return Task.FromResult(new LogReply { Content = "Hello" });
+        }
+    }
 
     class Program
     {        
@@ -23,9 +28,9 @@ namespace Server
         {
             Console.WriteLine("Hello World!");
 
-            Server server = new Server
+            var server = new Grpc.Core.Server
             {
-                Services = { Greeter.BindService(new LogService()) },
+                Services = { StreamLogging.BindService(new LogService()) },
                 Ports = { new ServerPort("localhost", Port, ServerCredentials.Insecure) }
             };
 
